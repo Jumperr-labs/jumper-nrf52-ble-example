@@ -1,26 +1,9 @@
 from __future__ import print_function
 from builtins import input
-import struct
 from time import sleep
 import argparse
 import gattlib
-import pdb
 
-
-# def discover(device_id):
-#     discovery = gattlib.DiscoveryService(device_id)
-#     devices = discovery.discover(10)
-#
-#     for address, name in devices.items():
-#         print('Found device: {} {}'.format(name, address))
-#         # print("name: {}, address: {}".format(name, address))
-
-
-# class NrfRequester(gattlib.GATTRequester):
-#     CHARACTARISTIC_TO_NOTIFY = "00002a19-0000-1000-8000-00805f9b34fb"  # nrf52 measurement charactaristic
-#     # CHARACTARISTIC_TO_NOTIFY = "0000180f-0000-1000-8000-00805f9b34fb"  # nrf52 measurement charactaristic
-#     NOTIFY_ON   = struct.pack("<H", 0x0001)
-#     NOTIFY_OFF  = struct.pack("<H", 0x0000)
 
 def main():
     parser = argparse.ArgumentParser()
