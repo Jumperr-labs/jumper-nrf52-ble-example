@@ -269,3 +269,20 @@ flash_softdevice:
 
 erase:
 	nrfjprog --eraseall -f nrf52
+
+##########
+# JUMPER #
+##########
+BINARY_HEX := $(OUTPUT_DIRECTORY)/nrf_and_softdevice.hex
+MERGED_BIN := $(OUTPUT_DIRECTORY)/nrf_and_softdevice.bin
+
+$(MERGED_BIN): $(OUTPUT_DIRECTORY)/nrf52832_xxaa.hex
+	mergehex -q -m $(OUTPUT_DIRECTORY)/nrf52832_xxaa.hex $(SDK_ROOT)/components/softdevice/s132/hex/s132_nrf52_4.0.2_softdevice.hex -o $(BINARY_HEX)
+	$(OBJCOPY) -I ihex ./$(BINARY_HEX) -O binary $(MERGED_BIN)
+
+merged: $(MERGED_BIN)
+
+.PHONY: merged
+#################
+# END OF JUMPER #
+#################
