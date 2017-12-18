@@ -47,13 +47,14 @@ def main():
     req.connect(wait=True, channel_type=args.channel_type)
     print('Connected')
 
+    previous_battery_level = 0
     try:
         while True:
-            x = input('Press enter to read battery level (q to exist)...')
-            if x == 'q':
-                break
-            print('Battery level: {}'.format(ord(req.read_by_handle(0x16)[0])))
-
+            battery_level = ord(req.read_by_handle(0x16)[0])
+            if battery_level != previous_battery_level:
+                print('Battery level: {}'.format(battery_level))
+                previous_battery_level = battery_level
+            sleep(5)
     except KeyboardInterrupt:
         pass
 
