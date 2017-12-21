@@ -9,6 +9,7 @@ virtualenv venv
 source venv/bin/activate
 apt-get install libbluetooth-dev
 apt-get install libboost-python-dev
+apt-get install libboost-all-dev
 pip install -r requirements.txt
 ```
 
