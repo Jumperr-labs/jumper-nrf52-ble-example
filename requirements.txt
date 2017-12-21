@@ -1,3 +1,5 @@
 jumper
+pexpect
+pygatt[GATTTOOL]
 gattlib
 future

@@ -3,7 +3,7 @@ from builtins import input
 from time import sleep
 import argparse
 import gattlib
-
+import pygatt
 
 def main():
     parser = argparse.ArgumentParser()
@@ -26,20 +26,32 @@ def main():
     sleep(1.5)
     input('Press enter to connect...')
     print('connecting to: {} {}'.format(device_name, bd_addr))
-    req = gattlib.GATTRequester(bd_addr, False, args.adapter_name)
-    req.connect(wait=True, channel_type=args.channel_type)
-    print('Connected')
-
+    
     previous_battery_level = 0
+    previous_hr_level = 0
+    adapter = pygatt.GATTToolBackend()
+
     try:
+        adapter.start()
+        device = adapter.connect(bd_addr, timeout=20, address_type=pygatt.BLEAddressType.random)
+        print('Connected')
+
         while True:
-            battery_level = ord(req.read_by_handle(0x16)[0])
+            battery_level = ord(device.char_read("00002a19-0000-1000-8000-00805f9b34fb", timeout=20))
             if battery_level != previous_battery_level:
                 print('Battery level: {}'.format(battery_level))
                 previous_battery_level = battery_level
+            hr_level = ord(device.char_read("00002a38-0000-1000-8000-00805f9b34fb", timeout=20))
+            if hr_level != previous_hr_level:
+                print('Heart rate level: {}'.format(hr_level))
+                previous_hr_level = hr_level
             sleep(5)
     except KeyboardInterrupt:
-        pass
+        print('Disconnecting')        
+        adapter.stop()
+    finally:
+        print('Disconnecting')
+        adapter.stop()
 
 
 if __name__ == '__main__':
