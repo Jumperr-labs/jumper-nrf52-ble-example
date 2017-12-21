@@ -7,6 +7,7 @@ sudo su
 cd /PATH/TO/jumper-nrf52-ble-examples/
 virtualenv venv
 source venv/bin/activate
+libbluetooth-dev
 pip install -r requirements.txt
 ```
 
