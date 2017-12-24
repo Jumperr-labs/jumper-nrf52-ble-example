@@ -35,6 +35,7 @@ def main():
         adapter.start()
         
         device = adapter.connect(bd_addr, timeout=20, address_type=pygatt.BLEAddressType.random)
+        # use this to connect to a specific device:
         # device = adapter.connect('FC:A0:D7:76:E0:53', timeout=20, address_type=pygatt.BLEAddressType.random)
         print('Connected')
 
