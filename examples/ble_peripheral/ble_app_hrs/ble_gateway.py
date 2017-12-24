@@ -23,7 +23,7 @@ def main():
             device_name = name
 
     print('Found device: {} {}'.format(device_name, bd_addr))
-    sleep(1.5)
+    sleep(0.5)
     input('Press enter to connect...')
     print('connecting to: {} {}'.format(device_name, bd_addr))
     
@@ -33,7 +33,9 @@ def main():
 
     try:
         adapter.start()
+        
         device = adapter.connect(bd_addr, timeout=20, address_type=pygatt.BLEAddressType.random)
+        # device = adapter.connect('FC:A0:D7:76:E0:53', timeout=20, address_type=pygatt.BLEAddressType.random)
         print('Connected')
 
         while True:
