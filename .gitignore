@@ -248,11 +248,11 @@ sdk/env
 ####################
 
 *.bincache.sha1
-jemu
+#jemu
 !jemu/
 uart
 !uart/
-*.cache.sha1
+#*.cache.sha1
 
 **/_build/*.map
 **/_build/*.in
