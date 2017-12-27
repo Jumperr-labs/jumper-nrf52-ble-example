@@ -4,6 +4,16 @@
 
 ```bash
 sudo su
+
+apt-get install git
+wget https://bootstrap.pypa.io/ez_setup.py -O - | python
+easy_install pip
+pip install virtualenv
+git clone git://git.kernel.org/pub/scm/bluetooth/bluez.git
+apt-get install autotools-dev automake libtool glib2.0 libdbus-1-dev elfutils libelf-dev libdw-dev libudev-dev libjson0 libjson0-dev libical-dev libreadline-dev
+./bootstrap-configure --disable-android --disable-midi
+make install
+
 cd /PATH/TO/jumper-nrf52-ble-examples/
 virtualenv venv
 source venv/bin/activate
