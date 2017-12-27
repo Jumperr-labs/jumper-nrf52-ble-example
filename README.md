@@ -5,7 +5,7 @@ open a terminal in your ubuntu machine and run:
 ```bash
 git clone https://github.com/Jumperr-labs/jumper-nrf52-ble-example.git
 ```
-### Setup
+## Setup
 open a terminal in your ubuntu machine and run: 
 ```bash
 sudo su
@@ -29,7 +29,7 @@ pip install -r requirements.txt
 
 Last setup step: please make sure you signed up on https://vlab.jumper.io , you have a config.json file in your system and  Jumper tools are installed in your system. Note to not install it under super user (sudo su).
 
-#### Usage
+### Usage
 
 - Open 3 different terminals, cd into jumper-nrf52-ble-examples directory and in the first two run:
     ```bash
