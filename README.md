@@ -4,7 +4,7 @@
 - Prerequisites:
     - Ubuntu 16.04
     - git
-    - Python2.7
+    - Python2.7 and pip
     
 - Make sure you have the latest Bluez drivers installed:
     
@@ -17,13 +17,17 @@
     ./configure --enable-deprecated
     make
     sudo make install
-    systemctl daemon-reload  
+    sudo cp attrib/gatttool /usr/local/bin/
+    systemctl daemon-reload
+    sudo systemctl unmask bluetooth
+    sudo systemctl enable bluetooth
+    sudo systemctl start bluetooth
     ```
 - Get this repo and install the required Python packages:
     
     ```bash
     git clone https://github.com/Jumperr-labs/jumper-nrf52-ble-example.git
-    cd jumper-nrf52-ble-examples
+    cd jumper-nrf52-ble-example
     sudo pip install -r requirements.txt
     ```
 - Last setup step: please make sure you signed up on https://vlab.jumper.io , you have a config.json file in your system and  Jumper tools are installed in your system.
@@ -31,12 +35,6 @@
 ### Usage
 - Open 3 different terminals and run: `cd /PATH/TO/jumper-nrf52-ble-examples/`
 - ***Terminal 1 -*** Start the virtual HCI device (BLE dongle): `sudo jumper ble`
-
-    You should see the following lines printed:
-    ```
-    @ New Settings: 0x0a11
-            powered bondable le secure-conn 
-    ```
 - ***Terminal 2 -*** Start the BLE gateway program: `sudo python examples/ble_peripheral/ble_app_hrs/ble_gateway.py`
 - ***Terminal 3 -*** Start the virtual nRF52 device with the ble_app_hrs example:
     
