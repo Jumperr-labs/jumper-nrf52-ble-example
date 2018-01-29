@@ -4,7 +4,7 @@
 - Prerequisites:
     - Ubuntu 16.04
     - git
-    - Python2.7 and pip
+    - Python2.7 and pip (`sudo apt install python-pip`)
     
 - Make sure you have the latest Bluez drivers installed:
     
@@ -26,7 +26,7 @@
 - Get this repo and install the required Python packages:
     
     ```bash
-    git clone https://github.com/Jumperr-labs/jumper-nrf52-ble-example.git
+    git clone --depth=1 https://github.com/Jumperr-labs/jumper-nrf52-ble-example.git
     cd jumper-nrf52-ble-example
     sudo pip install -r requirements.txt
     ```
