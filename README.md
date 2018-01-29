@@ -21,7 +21,7 @@
     sudo systemctl daemon-reload
     sudo systemctl unmask bluetooth
     sudo systemctl enable bluetooth
-    sudo systemctl start bluetooth
+    sudo systemctl restart bluetooth
     ```
 - Get this repo and install the required Python packages:
     
