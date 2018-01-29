@@ -18,7 +18,7 @@
     make
     sudo make install
     sudo cp attrib/gatttool /usr/local/bin/
-    systemctl daemon-reload
+    sudo systemctl daemon-reload
     sudo systemctl unmask bluetooth
     sudo systemctl enable bluetooth
     sudo systemctl start bluetooth
