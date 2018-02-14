@@ -9,7 +9,7 @@
 - Make sure you have the latest Bluez drivers installed:
     
     ```bash
-    sudo apt install autotools-dev automake libtool glib2.0 libdbus-1-dev elfutils libelf-dev libdw-dev libudev-dev libjson0 libjson0-dev libical-dev libreadline-dev libbluetooth-dev libboost-python-dev libboost-all-dev
+    sudo apt install autotools-dev automake libtool glib2.0 libdbus-1-dev elfutils libelf-dev libdw-dev libudev-dev libjson0 libjson0-dev libical-dev libreadline-dev libbluetooth-dev libboost-python-dev libboost-all-dev udev
     sudo apt remove bluez
     wget http://www.kernel.org/pub/linux/bluetooth/bluez-5.48.tar.xz
     tar xvf bluez-5.48.tar.xz
