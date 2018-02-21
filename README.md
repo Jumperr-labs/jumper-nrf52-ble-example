@@ -4,12 +4,12 @@
 - Prerequisites:
     - Ubuntu 16.04
     - git
-    - Python2.7 and pip
+    - Python2.7 and pip (`sudo apt install python-pip`)
     
 - Make sure you have the latest Bluez drivers installed:
     
     ```bash
-    sudo apt install autotools-dev automake libtool glib2.0 libdbus-1-dev elfutils libelf-dev libdw-dev libudev-dev libjson0 libjson0-dev libical-dev libreadline-dev libbluetooth-dev libboost-python-dev libboost-all-dev
+    sudo apt install autotools-dev automake libtool glib2.0 libdbus-1-dev elfutils libelf-dev libdw-dev libudev-dev libjson0 libjson0-dev libical-dev libreadline-dev libbluetooth-dev libboost-python-dev libboost-all-dev udev
     sudo apt remove bluez
     wget http://www.kernel.org/pub/linux/bluetooth/bluez-5.48.tar.xz
     tar xvf bluez-5.48.tar.xz
@@ -21,12 +21,12 @@
     sudo systemctl daemon-reload
     sudo systemctl unmask bluetooth
     sudo systemctl enable bluetooth
-    sudo systemctl start bluetooth
+    sudo systemctl restart bluetooth
     ```
 - Get this repo and install the required Python packages:
     
     ```bash
-    git clone https://github.com/Jumperr-labs/jumper-nrf52-ble-example.git
+    git clone --depth=1 https://github.com/Jumperr-labs/jumper-nrf52-ble-example.git
     cd jumper-nrf52-ble-example
     sudo pip install -r requirements.txt
     ```
