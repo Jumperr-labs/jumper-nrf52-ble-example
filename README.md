@@ -40,7 +40,7 @@
     
     ```bash
     cd examples/ble_peripheral/ble_app_hrs/
-    jumper run -b ../pca10040/s132/armgcc/_build/nrf_and_softdevice.bin -u  
+    jumper run -b pca10040/s132/armgcc/_build/nrf_and_softdevice.bin -u  
     ```
 - Check out the output on terminal 2:
     
