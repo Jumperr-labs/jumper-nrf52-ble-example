@@ -39,7 +39,7 @@
 - ***Terminal 3 -*** Start the virtual nRF52 device with the ble_app_hrs example:
     
     ```bash
-    cd examples/ble_peripheral/ble_app_hrs/jumper/
+    cd examples/ble_peripheral/ble_app_hrs/
     jumper run -b ../pca10040/s132/armgcc/_build/nrf_and_softdevice.bin -u  
     ```
 - Check out the output on terminal 2:
